@@ -10,7 +10,7 @@
     <form method="POST" action="user_data.php">
         <div>
             <label for="name">
-                Name: <input type="text" name="fname" placeholder="Firstname Lastname" autocomplete="off" required>
+                Name: <input type="text" name="name" placeholder="Firstname Lastname" autocomplete="off" required>
             </label>
         </div>
 
@@ -21,7 +21,7 @@
         </div>
         <div>
             <label for="dob">
-                Date of Birth: <input type="date" name="dob" placeholder="12/12/2022" autocomplete="off" required>
+                Date of Birth: <input type="date" name="dob">
             </label>
         </div>
         <div>

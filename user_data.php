@@ -1,19 +1,21 @@
 <?php
 
-extract($_REQUEST);
-$filename = fopen("userdata.csv", "a"); //open the filename in a read mode
+$name = $_POST['name']; 
+$email = $_POST['email'];
+$dob = $_POST['dob'];
+$gender = $_POST['gender'];
+$country = $_POST['country'];
 
-fwrite($filename, "Name :");
-fwrite($filename, $fname . "\n");
-fwrite($filename, "Email :");
-fwrite($filename, $email . "\n");
-fwrite($filename, "Date of birth :");
-fwrite($filename, $dob . "\n");
-fwrite($filename, "Gender :");
-fwrite($filename, $gender . "\n");
-fwrite($filename, "Country :");
-fwrite($filename, $country . "\n");
+$data = [ $name .", ". $email .", ". $dob .", ". $gender .", ". $country ."\n"]; 
 
-fclose($filename); //close filename
+foreach($data as $value){
+    print_r("$value", "\n");
+}
+
+$file = 'userdata.csv';
+$handle = fopen("userdata.csv", "a");
+fputcsv($handle, $data);
+fclose($handle);
+
 
 ?>
